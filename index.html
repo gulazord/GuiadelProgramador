@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guía del Programador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px 20px;
+    }
+
+    nav label {
+      color: white;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    main {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Guía del Programador</h1>
+  </header>
+
+  <nav>
+    <label for="lenguajes">¿Qué deseas aprender?</label>
+    <select id="lenguajes" onchange="irAlCurso(this.value)">
+      <option value="">-- Selecciona una opción --</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="nodejs">Node.js</option>
+      <option value="sql">SQL</option>
+    </select>
+  </nav>
+
+  <main>
+    <p>Bienvenido a Guía del Programador. Elige un lenguaje en el menú para comenzar a aprender.</p>
+  </main>
+
+  <script>
+    function irAlCurso(valor) {
+      if (valor) {
+        // Esto puede redirigir a otra página si existe
+        window.location.href = valor + ".html";
+      }
+    }
+  </script>
+
+</body>
+</html>
