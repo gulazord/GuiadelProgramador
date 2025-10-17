@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía: Qué es y Cómo Hacer un Pie de Página</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    section {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    code {
+      background-color: #eee;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #34495e;
+      color: white;
+      border-radius: 0 0 8px 8px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pie de Página (Footer) en HTML</h1>
+
+  <section>
+    <h2>¿Qué es un pie de página?</h2>
+    <p>
+      El <strong>pie de página</strong>, o <code>footer</code>, es una sección que aparece al final de una página web. 
+      Generalmente contiene información importante como derechos de autor, enlaces de contacto, términos legales, o información adicional.
+    </p>
+  </section>
+
+  <section>
+    <h2>¿Cómo se crea un pie de página?</h2>
+    <p>
+      En HTML, el pie de página se crea usando la etiqueta semántica <code>&lt;footer&gt;</code>. 
+      Esta etiqueta indica que el contenido que está dentro es el pie de página de la sección o del documento.
+    </p>
+    <p>Ejemplo básico:</p>
+    <pre>
+&lt;footer&gt;
+  &lt;p&gt;© 2025 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
+&lt;/footer&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>¿Cómo agregar un pie de página a tu página web?</h2>
+    <p>Coloca la etiqueta <code>&lt;footer&gt;</code> justo antes del cierre del <code>&lt;/body&gt;</code> para que aparezca al final.</p>
+    <p>Ejemplo completo con pie de página:</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Ejemplo con Pie de Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Bienvenido a Mi Página&lt;/h1&gt;
+  &lt;p&gt;Aquí va el contenido principal.&lt;/p&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2025 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Ejemplo visual de un pie de página</h2>
+    <p>Este es un ejemplo de pie de página que se ve en la parte inferior de esta página:</p>
+
+    <footer>
+      <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+  </section>
+
+</body>
+</html>

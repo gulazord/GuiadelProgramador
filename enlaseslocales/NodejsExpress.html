@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Qué es Node.js + Express?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left: 6px solid #3498db;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    pre {
+      background-color: #2d3436;
+      color: #dfe6e9;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+    }
+
+    .note {
+      background-color: #fff3cd;
+      padding: 10px;
+      border-left: 5px solid #f1c40f;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Qué es Node.js + Express?</h1>
+
+  <div class="section">
+    <h2>🔷 ¿Qué es Node.js?</h2>
+    <p>
+      <strong>Node.js</strong> es un entorno de ejecución de JavaScript del lado del servidor. Te permite ejecutar código JavaScript fuera del navegador, por ejemplo, en un servidor.
+    </p>
+    <ul>
+      <li>Permite crear servidores web.</li>
+      <li>Es rápido y eficiente gracias a su motor V8 (de Google Chrome).</li>
+      <li>Ideal para aplicaciones en tiempo real como chats, juegos, etc.</li>
+    </ul>
+
+    <div class="note"><strong>¿Para qué se usa?</strong><br>
+    Para crear APIs, servidores backend, automatizar tareas, etc.</div>
+  </div>
+
+  <div class="section">
+    <h2>🔷 ¿Qué es Express?</h2>
+    <p>
+      <strong>Express</strong> es un framework minimalista para Node.js que facilita la creación de servidores y APIs. Simplifica mucho el trabajo de configurar rutas, respuestas, errores, etc.
+    </p>
+    <ul>
+      <li>Fácil de usar y entender.</li>
+      <li>Permite crear APIs REST de manera muy rápida.</li>
+      <li>Se utiliza junto con Node.js para manejar rutas, peticiones, y respuestas.</li>
+    </ul>
+
+    <div class="note"><strong>¿Para qué se usa?</strong><br>
+    Para crear backends rápidos, APIs RESTful y manejar peticiones HTTP fácilmente.</div>
+  </div>
+
+  <div class="section">
+    <h2>🔗 ¿Cómo trabajan juntos?</h2>
+    <p>
+      Node.js ejecuta el servidor, mientras que Express organiza la lógica (rutas, respuestas, errores). Express se instala como un paquete dentro de un proyecto Node.js.
+    </p>
+    <p><strong>Instalación:</strong></p>
+    <pre><code># Instalar Node.js desde nodejs.org (una vez)
+# Luego crea tu proyecto:
+npm init -y
+npm install express</code></pre>
+
+    <p><strong>Ejemplo de servidor con Node.js + Express:</strong></p>
+    <pre><code>// index.js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Ruta principal
+app.get('/', (req, res) => {
+  res.send('¡Hola, mundo desde Express!');
+});
+
+// Servidor en marcha
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
+});
+</code></pre>
+
+    <div class="note">
+      💡 Si visitas <code>http://localhost:3000</code> verás el mensaje <em>"¡Hola, mundo desde Express!"</em>.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>⚙️ Cosas importantes a tener en cuenta</h2>
+    <ul>
+      <li>Necesitas tener <strong>Node.js instalado</strong>.</li>
+      <li>Debes iniciar el servidor cada vez que lo edites con: <code>node index.js</code>.</li>
+      <li>Puedes usar herramientas como <code>nodemon</code> para reiniciar el servidor automáticamente.</li>
+      <li>Express es muy usado junto a bases de datos como MongoDB o MySQL.</li>
+    </ul>
+  </div>
+
+</body>
+</html>

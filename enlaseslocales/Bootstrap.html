@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Completa de Bootstrap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    section {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    code {
+      background-color: #eee;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .example {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      background: #fafafa;
+    }
+    .btn-group-examples > * {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #34495e;
+      color: white;
+      border-radius: 0 0 8px 8px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+
+  <!-- Bootstrap CDN para que funcione la página con ejemplos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <h1>Guía Completa de Bootstrap</h1>
+
+  <section>
+    <h2>¿Qué es Bootstrap?</h2>
+    <p>
+      <strong>Bootstrap</strong> es un framework CSS y JavaScript desarrollado por Twitter para facilitar la creación de sitios web responsivos y modernos.
+      Ofrece estilos predefinidos y componentes reutilizables como botones, formularios, menús de navegación, carruseles, tarjetas, modales y mucho más.
+    </p>
+    <p>Con Bootstrap puedes construir páginas que se adaptan automáticamente a distintos tamaños de pantalla (móviles, tablets, computadoras) sin tener que diseñar todo desde cero.</p>
+  </section>
+
+  <section>
+    <h2>¿Cómo agregar Bootstrap a tu proyecto?</h2>
+
+    <h3>1. Usando CDN (enlaces directos)</h3>
+    <p>Esta es la forma más rápida y sencilla de agregar Bootstrap a tu proyecto. Solo agrega estos enlaces en el <code>&lt;head&gt;</code> y antes de cerrar el <code>&lt;/body&gt;</code>:</p>
+
+    <pre>
+// En &lt;head&gt; para estilos CSS:
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+// Antes de &lt;/body&gt; para scripts JS:
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    </pre>
+
+    <h3>2. Usando archivos locales</h3>
+    <p>
+      Descarga los archivos CSS y JS de Bootstrap desde su <a href="https://getbootstrap.com/docs/5.3/getting-started/download/" target="_blank" rel="noopener">sitio oficial</a> y guárdalos en tu proyecto.
+      Luego enlaza esos archivos localmente:
+    </p>
+
+    <pre>
+// En &lt;head&gt; (suponiendo que el CSS está en carpeta css):
+&lt;link href="css/bootstrap.min.css" rel="stylesheet"&gt;
+
+// Antes de &lt;/body&gt; (suponiendo que JS está en carpeta js):
+&lt;script src="js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Componentes comunes de Bootstrap</h2>
+
+    <h3>Botones</h3>
+    <p>Los botones en Bootstrap vienen con estilos y colores predefinidos que puedes usar fácilmente.</p>
+
+    <div class="example btn-group-examples">
+      <!-- Botones visuales usando Bootstrap -->
+      <button type="button" class="btn btn-primary">Botón Primario</button>
+      <button type="button" class="btn btn-secondary">Botón Secundario</button>
+      <button type="button" class="btn btn-success">Botón Éxito</button>
+      <button type="button" class="btn btn-danger">Botón Peligro</button>
+    </div>
+
+    <pre>
+&lt;!-- Botones básicos --&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Botón Primario&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Botón Secundario&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Botón Éxito&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Botón Peligro&lt;/button&gt;
+    </pre>
+
+    <p><strong>Botón con enlace:</strong> Para que un botón funcione como enlace, usa una etiqueta <code>&lt;a&gt;</code> con clases de botón:</p>
+
+    <div class="example">
+      <a href="https://www.ejemplo.com" class="btn btn-info" target="_blank">Ir a ejemplo.com</a>
+    </div>
+
+    <pre>
+&lt;!-- Botón que es un enlace --&gt;
+&lt;a href="https://www.ejemplo.com" class="btn btn-info" target="_blank"&gt;Ir a ejemplo.com&lt;/a&gt;
+    </pre>
+
+    <p><strong>Botón de formulario "Enviar":</strong> Si quieres un botón para enviar formulario:</p>
+
+    <pre>
+&lt;button type="submit" class="btn btn-primary"&gt;Enviar&lt;/button&gt;
+    </pre>
+
+    <hr />
+
+    <h3>Carrusel (slider de imágenes)</h3>
+    <p>Un carrusel permite mostrar varias imágenes o contenido en un espacio limitado, con navegación automática o manual.</p>
+
+    <!-- Carrusel visual -->
+    <div id="demoCarrusel" class="carousel slide mb-3" data-bs-ride="carousel" style="max-width: 600px;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/id/1018/600/300" class="d-block w-100" alt="Imagen 1" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Primera Imagen</h5>
+            <p>Descripción de la primera imagen.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/1015/600/300" class="d-block w-100" alt="Imagen 2" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Segunda Imagen</h5>
+            <p>Descripción de la segunda imagen.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/1019/600/300" class="d-block w-100" alt="Imagen 3" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Tercera Imagen</h5>
+            <p>Descripción de la tercera imagen.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#demoCarrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demoCarrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <pre>
+&lt;!-- Carrusel básico --&gt;
+&lt;div id="demoCarrusel" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="1"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#demoCarrusel" data-bs-slide-to="2"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="imagen1.jpg" class="d-block w-100" alt="..."&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Título Imagen 1&lt;/h5&gt;
+        &lt;p&gt;Descripción Imagen 1&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Más imágenes --&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" type="button" data-bs-target="#demoCarrusel" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Anterior&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" type="button" data-bs-target="#demoCarrusel" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Siguiente&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+    </pre>
+
+    <hr />
+
+    <h3>Alertas</h3>
+    <p>Las alertas sirven para mostrar mensajes destacados al usuario, como advertencias, éxitos o errores.</p>
+
+    <div class="example">
+      <div class="alert alert-success" role="alert">¡Operación exitosa!</div>
+      <div class="alert alert-danger" role="alert">Ha ocurrido un error.</div>
+      <div class="alert alert-warning" role="alert">Precaución: revise los datos.</div>
+      <div class="alert alert-info" role="alert">Información importante para el usuario.</div>
+    </div>
+
+    <pre>
+&lt;!-- Alertas básicas --&gt;
+&lt;div class="alert alert-success" role="alert"&gt;¡Operación exitosa!&lt;/div&gt;
+&lt;div class="alert alert-danger" role="alert"&gt;Ha ocurrido un error.&lt;/div&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;Precaución: revise los datos.&lt;/div&gt;
+&lt;div class="alert alert-info" role="alert"&gt;Información importante para el usuario.&lt;/div&gt;
+    </pre>
+
+    <hr />
+
+    <h3>Tarjetas (Cards)</h3>
+    <p>Las tarjetas permiten organizar contenido en bloques con imagen, título, texto y botones.</p>
+
+    <div class="example" style="max-width: 400px;">
+      <div class="card">
+        <img src="https://picsum.photos/400/200" class="card-img-top" alt="Imagen de ejemplo" />
+        <div class="card-body">
+          <h5 class="card-title">Título de la tarjeta</h5>
+          <p class="card-text">Este es un ejemplo de contenido dentro de una tarjeta de Bootstrap.</p>
+          <a href="#" class="btn btn-primary">Acción</a>
+        </div>
+      </div>
+    </div>
+
+    <pre>
+&lt;!-- Tarjeta básica --&gt;
+&lt;div class="card"&gt;
+  &lt;img src="imagen.jpg" class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class

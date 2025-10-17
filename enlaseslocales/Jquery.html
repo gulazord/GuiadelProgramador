@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Completa de jQuery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    section {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    code {
+      background-color: #eee;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .example {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      background: #fafafa;
+    }
+    button {
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #34495e;
+      color: white;
+      border-radius: 0 0 8px 8px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+
+  <!-- Enlace CDN jQuery para que funcionen los ejemplos -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+</head>
+<body>
+
+  <h1>Guía Completa de jQuery</h1>
+
+  <section>
+    <h2>¿Qué es jQuery?</h2>
+    <p>
+      <strong>jQuery</strong> es una biblioteca (librería) de JavaScript que facilita la manipulación del DOM, manejo de eventos, animaciones y peticiones AJAX con una sintaxis sencilla y compatible con la mayoría de los navegadores.
+    </p>
+    <p>Permite escribir menos código para lograr efectos y funciones que con JavaScript puro pueden ser más extensos o complicados.</p>
+  </section>
+
+  <section>
+    <h2>¿Cuál es la diferencia entre jQuery y Bootstrap?</h2>
+    <p>
+      Bootstrap es un <strong>framework CSS y JS</strong> que ofrece estilos y componentes predefinidos para construir interfaces visuales responsivas.
+    </p>
+    <p>
+      jQuery es una <strong>biblioteca de JavaScript</strong> que te ayuda a programar la lógica, manipular elementos HTML, crear animaciones y trabajar con eventos.
+    </p>
+    <p><strong>¿Se pueden usar juntos?</strong> Sí, de hecho muchas versiones antiguas de Bootstrap usan jQuery para sus componentes interactivos (modales, dropdowns, tooltips).</p>
+    <p>Actualmente Bootstrap 5 no depende de jQuery, pero puedes usar ambas bibliotecas en el mismo proyecto para aprovechar estilos de Bootstrap y la facilidad de manipulación del DOM con jQuery.</p>
+  </section>
+
+  <section>
+    <h2>¿Cómo agregar jQuery a tu proyecto?</h2>
+    <h3>1. Usando CDN</h3>
+    <p>Solo incluye este script antes de cerrar <code>&lt;/body&gt;</code> para cargar jQuery desde un servidor público:</p>
+
+    <pre>
+&lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+    </pre>
+
+    <h3>2. Usando archivo local</h3>
+    <p>Descarga <a href="https://jquery.com/download/" target="_blank" rel="noopener">jQuery</a> y guarda el archivo <code>jquery.min.js</code> en tu proyecto. Luego enlázalo así:</p>
+
+    <pre>
+&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Ejemplos básicos de jQuery</h2>
+
+    <h3>Seleccionar elementos y cambiar texto</h3>
+    <p>Este ejemplo cambia el texto de un párrafo al hacer clic en un botón.</p>
+
+    <div class="example">
+      <p id="parrafo1">Este texto se cambiará.</p>
+      <button id="btnCambiarTexto" class="btn btn-primary">Cambiar texto</button>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#btnCambiarTexto").click(function() {
+    $("#parrafo1").text("¡El texto ha cambiado usando jQuery!");
+  });
+});
+    </pre>
+
+    <h3>Manejo de eventos</h3>
+    <p>Detectar cuando se pasa el mouse sobre un elemento y cambiar su color.</p>
+
+    <div class="example">
+      <div id="caja" style="width:200px; height:100px; background:#3498db; color:white; line-height:100px; text-align:center; border-radius:8px;">
+        Pasa el mouse aquí
+      </div>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#caja").hover(
+    function() {
+      $(this).css("background-color", "#2ecc71");
+    },
+    function() {
+      $(this).css("background-color", "#3498db");
+    }
+  );
+});
+    </pre>
+
+    <h3>Mostrar/Ocultar elementos</h3>
+    <p>Ejemplo de botón que oculta y muestra un párrafo.</p>
+
+    <div class="example">
+      <button id="btnToggle" class="btn btn-secondary">Mostrar/Ocultar párrafo</button>
+      <p id="parrafoToggle" style="margin-top:10px;">Este párrafo puede ocultarse o mostrarse.</p>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#btnToggle").click(function() {
+    $("#parrafoToggle").toggle();
+  });
+});
+    </pre>
+
+    <h3>Efectos de animación</h3>
+    <p>Usando fadeIn y fadeOut para animar la aparición y desaparición.</p>
+
+    <div class="example">
+      <button id="btnFadeIn" class="btn btn-success">Fade In</button>
+      <button id="btnFadeOut" class="btn btn-danger">Fade Out</button>
+      <div id="cajaFade" style="width:200px; height:100px; background:#e74c3c; margin-top:15px; border-radius: 6px;"></div>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#btnFadeIn").click(function() {
+    $("#cajaFade").fadeIn();
+  });
+  $("#btnFadeOut").click(function() {
+    $("#cajaFade").fadeOut();
+  });
+});
+    </pre>
+
+    <h3>Manipulación del DOM</h3>
+    <p>Añadir un nuevo elemento a una lista.</p>
+
+    <div class="example">
+      <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+      </ul>
+      <button id="btnAgregar" class="btn btn-info">Agregar elemento</button>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#btnAgregar").click(function() {
+    $("#lista").append("&lt;li&gt;Nuevo elemento&lt;/li&gt;");
+  });
+});
+    </pre>
+
+    <h3>Peticiones AJAX</h3>
+    <p>Solicitar datos desde un servidor sin recargar la página.</p>
+
+    <div class="example">
+      <button id="btnCargar" class="btn btn-warning">Cargar datos</button>
+      <div id="resultado" style="margin-top: 15px; padding: 10px; background: #f0f0f0; border-radius: 6px;">
+        Aquí se mostrarán los datos cargados.
+      </div>
+    </div>
+
+    <pre>
+$(document).ready(function() {
+  $("#btnCargar").click(function() {
+    $("#resultado").text("Cargando...");
+    $.ajax({
+      url: "https://jsonplaceholder.typicode.com/posts/1",
+      method: "GET",
+      success: function(data) {
+        $("#resultado").html("&lt;strong&gt;Título:&lt;/strong&gt; " + data.title + "&lt;br&gt;&lt;strong&gt;Cuerpo:&lt;/strong&gt; " + data.body);
+      },
+      error: function() {
+        $("#resultado").text("Error al cargar los datos.");
+      }
+    });
+  });
+});
+    </pre>
+
+  </section>
+
+  <footer>
+    Guía de jQuery creada para ayudarte a aprender paso a paso.
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      // Cambiar texto
+      $("#btnCambiarTexto").click(function() {
+        $("#parrafo1").text("¡El texto ha cambiado usando jQuery!");
+      });
+
+      // Hover caja color
+      $("#caja").hover(
+        function() {
+          $(this).css("background-color", "#2ecc71");
+        },
+        function() {
+          $(this).css("background-color", "#3498db");
+        }
+      );
+
+      // Mostrar/Ocultar
+      $("#btnToggle").click(function() {
+        $("#parrafoToggle").toggle();
+      });
+
+      // FadeIn / FadeOut
+      $("#btnFadeIn").click(function() {
+        $("#cajaFade").fadeIn();
+      });
+      $("#btnFadeOut").click(function() {
+        $("#cajaFade").fadeOut();
+      });
+
+      // Agregar elemento a lista
+      $("#btnAgregar").click(function() {
+        $("#lista").append("<li>Nuevo elemento</li>");
+      });
+
+      // Petición AJAX
+      $("#btnCargar").click(function() {
+        $("#resultado").text("Cargando...");
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts/1",
+          method: "GET",
+          success: function(data) {
+            $("#resultado").html("<strong>Título:</strong> " + data.title + "<br><strong>Cuerpo:</strong> " + data.body);
+          },
+          error: function() {
+            $("#resultado").text("Error al cargar los datos.");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

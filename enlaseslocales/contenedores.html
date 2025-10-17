@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Completa de Contenedores con HTML y CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+      color: #333;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      color: #3498db;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+    p {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    pre {
+      background-color: #2d3436;
+      color: #dfe6e9;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 1em;
+      max-width: 900px;
+      overflow-x: auto;
+      margin: 0 auto 25px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .example {
+      max-width: 900px;
+      margin: 0 auto 10px;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      color: #2d3436;
+      border: 2px dashed #3498db;
+      background-color: #dfe6e9;
+    }
+    .modification {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 15px 20px;
+      background-color: #d0e8ff;
+      border-left: 5px solid #3498db;
+      border-radius: 5px;
+      color: #1a3d7c;
+      font-size: 1em;
+    }
+    .selector-tip {
+      text-align: center;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+
+    /* Estilos de los contenedores */
+    .basic-container {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      background-color: #dfe6e9;
+      border: 1px solid #b2bec3;
+      border-radius: 5px;
+    }
+    .fluid-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffeaa7;
+      border-radius: 10px;
+      border: 1px solid #fdcb6e;
+      color: #2d3436;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #81ecec;
+      padding: 15px;
+      border-radius: 8px;
+      gap: 10px;
+      color: #2d3436;
+    }
+    .flex-container > div {
+      background-color: #00cec9;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      min-width: 80px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 15px;
+      background-color: #fab1a0;
+      border-radius: 8px;
+      color: #2d3436;
+    }
+    .grid-container > div {
+      background-color: #d63031;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Guía Completa de Contenedores con HTML y CSS</h1>
+
+  <!-- Contenedor básico -->
+  <h2>1. Contenedor básico con ancho fijo y centrado</h2>
+  <p>Este contenedor tiene un ancho fijo de 600px, está centrado horizontalmente y tiene un fondo gris claro.</p>
+  <pre>
+&lt;div class="basic-container"&gt;
+  Contenedor básico con ancho fijo y centrado
+&lt;/div&gt;
+  </pre>
+  <div class="basic-container example">
+    Contenedor básico con ancho fijo y centrado
+  </div>
+  <div class="modification">
+    <strong>Cómo modificarlo con CSS:</strong><br>
+    - Cambiar el ancho: <code>width: 800px;</code><br>
+    - Cambiar el color de fondo: <code>background-color: #a0d2eb;</code><br>
+    - Cambiar el borde: <code>border: 2px solid #3498db;</code><br>
+    - Añadir sombra: <code>box-shadow: 2px 2px 8px rgba(0,0,0,0.2);</code>
+  </div>
+  <p class="selector-tip">
+    🛠 Para modificar este contenedor en CSS: usa <code>.basic-container</code>
+  </p>
+
+  <!-- Contenedor fluido -->
+  <h2>2. Contenedor fluido (responsive)</h2>
+  <p>Este contenedor ocupa el 90% del ancho de la pantalla, con un máximo de 900px, para adaptarse a diferentes tamaños de dispositivos.</p>
+  <pre>
+&lt;div class="fluid-container"&gt;
+  Contenedor fluido responsive
+&lt;/div&gt;
+  </pre>
+  <div class="fluid-container example">
+    Contenedor fluido responsive
+  </div>
+  <div class="modification">
+    <strong>Cómo modificarlo con CSS:</strong><br>
+    - Cambiar el ancho relativo: <code>width: 80%;</code><br>
+    - Cambiar el máximo ancho: <code>max-width: 1200px;</code><br>
+    - Cambiar color de fondo: <code>background-color: #ffb347;</code><br>
+    - Añadir padding extra: <code>padding: 40px;</code>
+  </div>
+  <p class="selector-tip">
+    🛠 Para modificar este contenedor en CSS: usa <code>.fluid-container</code>
+  </p>
+
+  <!-- Contenedor Flex -->
+  <h2>3. Contenedor con Flexbox</h2>
+  <p>Usa Flexbox para organizar los elementos hijos en una fila con espacio alrededor y centrados verticalmente.</p>
+  <pre>
+&lt;div class="flex-container"&gt;
+  &lt;div&gt;Elemento 1&lt;/div&gt;
+  &lt;div&gt;Elemento 2&lt;/div&gt;
+  &lt;div&gt;Elemento 3&lt;/div&gt;
+&lt;/div&gt;
+  </pre>
+  <div class="flex-container example">
+    <div>Elemento 1</div>
+    <div>Elemento 2</div>
+    <div>Elemento 3</div>
+  </div>
+  <div class="modification">
+    <strong>Cómo modificarlo con CSS:</strong><br>
+    - Cambiar dirección: <code>flex-direction: column;</code><br>
+    - Alinear horizontalmente: <code>justify-content: center;</code><br>
+    - Alinear verticalmente: <code>align-items: flex-start;</code><br>
+    - Espacio entre hijos: <code>gap: 30px;</code>
+  </div>
+  <p class="selector-tip">
+    🛠 Para modificar este contenedor en CSS: usa <code>.flex-container</code>
+  </p>
+
+  <!-- Contenedor Grid -->
+  <h2>4. Contenedor con Grid Layout</h2>
+  <p>Organiza los elementos hijos en una cuadrícula de 3 columnas iguales con espacios entre ellos.</p>
+  <pre>
+&lt;div class="grid-container"&gt;
+  &lt;div&gt;Celda 1&lt;/div&gt;
+  &lt;div&gt;Celda 2&lt;/div&gt;
+  &lt;div&gt;Celda 3&lt;/div&gt;
+  &lt;div&gt;Celda 4&lt;/div&gt;
+  &lt;div&gt;Celda 5&lt;/div&gt;
+  &lt;div&gt;Celda 6&lt;/div&gt;
+&lt;/div&gt;
+  </pre>
+  <div class="grid-container example">
+    <div>Celda 1</div>
+    <div>Celda 2</div>
+    <div>Celda 3</div>
+    <div>Celda 4</div>
+    <div>Celda 5</div>
+    <div>Celda 6</div>
+  </div>
+  <div class="modification">
+    <strong>Cómo modificarlo con CSS:</strong><br>
+    - Cambiar columnas: <code>grid-template-columns: repeat(4, 1fr);</code><br>
+    - Cambiar espacio: <code>gap: 30px;</code><br>
+    - Filas automáticas: <code>grid-auto-rows: 100px;</code><br>
+    - Alineación: <code>justify-items: center;</code>, <code>align-items: center;</code>
+  </div>
+  <p class="selector-tip">
+    🛠 Para modificar este contenedor en CSS: usa <code>.grid-container</code>
+  </p>
+
+</body>
+</html>

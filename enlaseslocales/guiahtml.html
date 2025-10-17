@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Básica de HTML</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #2c3e50;
+      margin: 0;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    h1, h2 {
+      color: #34495e;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.8em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+
+    code {
+      background-color: #ecf0f1;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-size: 0.95em;
+      font-family: 'Courier New', monospace;
+    }
+
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      overflow-x: auto;
+      margin: 20px 0;
+      white-space: pre-wrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 1em;
+    }
+
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #34495e;
+      color: white;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #bdc3c7;
+      border-radius: 6px;
+      font-size: 1em;
+      margin-top: 6px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1em;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Guía Básica de HTML</h1>
+  <p>En esta guía aprenderás la estructura básica de un documento HTML y los elementos esenciales para construir una página web desde cero.</p>
+
+  <section>
+    <h2>1. Estructura básica de un documento HTML</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;      &lt;!-- Define que este documento es HTML5 --&gt;
+&lt;html lang="es"&gt;    &lt;!-- Comienza el documento HTML y establece el idioma a español --&gt;
+&lt;head&gt;              &lt;!-- Información que no se muestra en la página --&gt;
+  &lt;meta charset="UTF-8"&gt;   &lt;!-- Define la codificación de caracteres (acentos, ñ, etc.) --&gt;
+  &lt;title&gt;Título de la página&lt;/title&gt; &lt;!-- Título que aparece en la pestaña del navegador --&gt;
+&lt;/head&gt;
+&lt;body&gt;              &lt;!-- Contenido visible de la página --&gt;
+  &lt;h1&gt;Hola Mundo&lt;/h1&gt;  &lt;!-- Encabezado principal --&gt;
+  &lt;p&gt;Este es un párrafo.&lt;/p&gt;  &lt;!-- Párrafo de texto --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>2. Encabezados (h1 a h6)</h2>
+    <p>Se usan para títulos y subtítulos. <code>h1</code> es el más importante y grande, <code>h6</code> el menos.</p>
+    <pre>
+&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sub-subtítulo&lt;/h3&gt;
+...
+&lt;h6&gt;Título pequeño&lt;/h6&gt;
+    </pre>
+    <h3>Ejemplo:</h3>
+    <h1>Título principal</h1>
+    <h2>Subtítulo</h2>
+    <h3>Sub-subtítulo</h3>
+  </section>
+
+  <section>
+    <h2>3. Párrafos</h2>
+    <pre>
+&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;
+    </pre>
+    <p>Los párrafos son bloques de texto que se separan automáticamente con un espacio.</p>
+    <p>Ejemplo:</p>
+    <p>Este es un párrafo visible en la página.</p>
+  </section>
+
+  <section>
+    <h2>4. Enlaces (links)</h2>
+    <pre>
+&lt;a href="https://www.google.com"&gt;Visitar Google&lt;/a&gt;
+    </pre>
+    <p>El texto entre <code>&lt;a&gt;</code> y <code>&lt;/a&gt;</code> será clicable y llevará a la dirección indicada en <code>href</code>.</p>
+    <p>Ejemplo:</p>
+    <a href="https://www.google.com" target="_blank">Visitar Google</a>
+  </section>
+
+  <section>
+    <h2>5. Imágenes</h2>
+    <p>Para insertar imágenes en tu página web, puedes usar imágenes alojadas en internet o imágenes que tengas en tu computadora (locales).</p>
+
+    <h3>Imagen desde un enlace externo (URL)</h3>
+    <pre>
+&lt;img src="https://via.placeholder.com/200" alt="Imagen de ejemplo"&gt;
+    </pre>
+    <img src="https://via.placeholder.com/200" alt="Imagen de ejemplo" />
+
+    <h3>Imagen local (desde tu carpeta)</h3>
+    <p>Si tienes una imagen en la misma carpeta que tu archivo HTML, o en una subcarpeta, la referencia sería así:</p>
+    <pre>
+&lt;!-- Imagen en la misma carpeta que el archivo HTML --&gt;
+&lt;img src="foto.jpg" alt="Mi foto local"&gt;
+
+&lt;!-- Imagen dentro de una carpeta llamada "imagenes" dentro de la carpeta del HTML --&gt;
+&lt;img src="imagenes/foto.jpg" alt="Mi foto local en subcarpeta"&gt;
+    </pre>
+
+  </section>
+
+  <section>
+    <h2>6. Botones</h2>
+    <p>Los botones son elementos clicables que pueden usarse para diferentes acciones.</p>
+
+    <h3>Botón simple</h3>
+    <pre>
+&lt;button&gt;Haz clic aquí&lt;/button&gt;
+    </pre>
+    <button>Haz clic aquí</button>
+
+    <h3>Botón que envía un formulario</h3>
+    <pre>
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+    </pre>
+    <p>Este botón se usa dentro de formularios para enviar la información.</p>
+
+    <h3>Botón que funciona como enlace (redirige a otra página)</h3>
+    <pre>
+&lt;button onclick="window.location.href='https://www.ejemplo.com'"&gt;Ir a Ejemplo&lt;/button&gt;
+    </pre>
+    <button onclick="window.location.href='https://www.ejemplo.com'">Ir a Ejemplo</button>
+
+    <p>Al hacer clic en este botón, te llevará a la URL especificada.</p>
+  </section>
+
+  <section>
+    <h2>7. Listas</h2>
+    <h3>Lista ordenada (numerada)</h3>
+    <pre>
+&lt;ol&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+    <ol>
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+    </ol>
+
+    <h3>Lista desordenada (con viñetas)</h3>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;Elemento uno&lt;/li&gt;
+  &lt;li&gt;Elemento dos&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+    <ul>
+      <li>Elemento uno</li>
+      <li>Elemento dos</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Tablas</h2>
+    <pre>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Luis&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+      </tr>
+      <tr>
+        <td>Ana</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Luis</td>
+        <td>30</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>9. Formularios</h2>
+    <pre>
+&lt;form action="procesar.php" method="post"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <form action="procesar.php" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comandos Básicos CSS</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+    .code-block {
+      font-family: 'Courier New', monospace;
+      background-color: #2d3436;
+      color: #dfe6e9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    .comment {
+      color: #7f8c8d;
+      font-style: italic;
+    }
+    .description {
+      font-family: 'Verdana', sans-serif;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      color: #2d3436;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    pre {
+      margin: 15px 0;
+    }
+    .highlight {
+      color: #FFC107;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Comandos Básicos CSS</h1>
+
+    <!-- Comando 1 -->
+    <div class="command">
+      <div class="description">1. Cambiar el tamaño de la fuente (letras más grandes)</div>
+      <pre class="code-block"><span class="comment">-- Aumenta el tamaño de la fuente a 30 píxeles</span>
+p {
+  font-size: 30px; <span class="comment">-- Establece el tamaño de la fuente en píxeles</span>
+}</pre>
+    </div>
+
+    <!-- Comando 2 -->
+    <div class="command">
+      <div class="description">2. Centrar texto horizontalmente</div>
+      <pre class="code-block"><span class="comment">-- Centra el texto dentro de un contenedor</span>
+.center-text {
+  text-align: center; <span class="comment">-- Centra el texto horizontalmente dentro del elemento</span>
+}</pre>
+    </div>
+
+    <!-- Comando 3 -->
+    <div class="command">
+      <div class="description">3. Alinear un bloque de contenido horizontalmente (con márgenes automáticos)</div>
+      <pre class="code-block"><span class="comment">-- Alinea un div horizontalmente usando márgenes automáticos</span>
+.align-center {
+  width: 300px; <span class="comment">-- Establece un ancho fijo para el contenedor</span>
+  margin-left: auto; <span class="comment">-- Aplica un margen automático a la izquierda</span>
+  margin-right: auto; <span class="comment">-- Aplica un margen automático a la derecha</span>
+}</pre>
+    </div>
+
+    <!-- Comando 4 -->
+    <div class="command">
+      <div class="description">4. Alinear texto verticalmente</div>
+      <pre class="code-block"><span class="comment">-- Alinea el texto verticalmente dentro de un contenedor</span>
+.center-vertical {
+  display: flex; <span class="comment">-- Utiliza Flexbox para alinear contenido</span>
+  justify-content: center; <span class="comment">-- Centra el contenido horizontalmente</span>
+  align-items: center; <span class="comment">-- Centra el contenido verticalmente</span>
+  height: 200px; <span class="comment">-- Establece una altura para ver el efecto</span>
+}</pre>
+    </div>
+
+    <!-- Comando 5 -->
+    <div class="command">
+      <div class="description">5. Cambiar color de texto</div>
+      <pre class="code-block"><span class="comment">-- Cambia el color del texto a rojo</span>
+h2 {
+  color: red; <span class="comment">-- Establece el color del texto como rojo</span>
+}</pre>
+    </div>
+
+    <!-- Comando 6 -->
+    <div class="command">
+      <div class="description">6. Establecer un fondo de color</div>
+      <pre class="code-block"><span class="comment">-- Establece un color de fondo para un contenedor</span>
+.container-background {
+  background-color: #3498db; <span class="comment">-- Establece un fondo de color azul</span>
+  padding: 20px; <span class="comment">-- Agrega algo de espacio alrededor del contenido</span>
+}</pre>
+    </div>
+
+    <!-- Comando 7 -->
+    <div class="command">
+      <div class="description">7. Cambiar el estilo de la fuente</div>
+      <pre class="code-block"><span class="comment">-- Cambia el estilo de la fuente a cursiva</span>
+p.italic-text {
+  font-style: italic; <span class="comment">-- Aplica un estilo de fuente en cursiva</span>
+}</pre>
+    </div>
+
+    <!-- Comando 8 -->
+    <div class="command">
+      <div class="description">8. Cambiar el espaciado entre letras (tracking)</div>
+      <pre class="code-block"><span class="comment">-- Aumenta el espacio entre las letras</span>
+h1 {
+  letter-spacing: 5px; <span class="comment">-- Aumenta el espaciado entre letras en 5 píxeles</span>
+}</pre>
+    </div>
+
+    <!-- Comando 9 -->
+    <div class="command">
+      <div class="description">9. Colocar una sombra al texto</div>
+      <pre class="code-block"><span class="comment">-- Agrega una sombra sutil al texto</span>
+h3 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); <span class="comment">-- Aplica una sombra al texto</span>
+}</pre>
+    </div>
+
+    <!-- Comando 10 -->
+    <div class="command">
+      <div class="description">10. Cambiar el color de fondo en función de la posición del cursor</div>
+      <pre class="code-block"><span class="comment">-- Cambia el color de fondo cuando el cursor pasa sobre el elemento</span>
+button:hover {
+  background-color: #e74c3c; <span class="comment">-- Cambia el fondo a rojo al pasar el mouse</span>
+}</pre>
+    </div>
+
+    <!-- Comando 11 -->
+    <div class="command">
+      <div class="description">11. Añadir un borde a un elemento</div>
+      <pre class="code-block"><span class="comment">-- Añade un borde sólido de 2 píxeles a un elemento</span>
+div.bordered {
+  border: 2px solid #2c3e50; <span class="comment">-- Aplica un borde de 2px con color azul oscuro</span>
+}</pre>
+    </div>
+
+    <!-- Comando 12 -->
+    <div class="command">
+      <div class="description">12. Establecer márgenes (espaciado exterior)</div>
+      <pre class="code-block"><span class="comment">-- Establece un margen de 20 píxeles alrededor de un elemento</span>
+div.margin-example {
+  margin: 20px; <span class="comment">-- Aplica un margen de 20px a todos los lados del contenedor</span>
+}</pre>
+    </div>
+
+    <!-- ✅ Comando 13 Corregido -->
+    <div class="command">
+      <div class="description">13. Establecer relleno (espaciado interior)</div>
+      <pre class="code-block"><span class="comment">-- Establece un relleno de 15 píxeles dentro de un contenedor</span>
+div.padding-example {
+  padding: 15px; <span class="comment">-- Aplica un relleno interno de 15 píxeles</span>
+}</pre>
+    </div>
+
+  </div>
+</body>
+</html>
